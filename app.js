@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var booksRouter = require('./routes/books');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/books', booksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -265,15 +267,15 @@ module.exports = app;
 //   else { console.log('Success!!') }
 // });
 
-var cookieParser = require('cookie-parser');
-app.use(cookieParser());
+// var cookieParser = require('cookie-parser');
+// app.use(cookieParser());
 
-app.get('/', function (req, res) {
-  // Cookies that have not been signed
-  console.log('Cookies: ', req.cookies);
+// app.get('/', function (req, res) {
+//   // Cookies that have not been signed
+//   console.log('Cookies: ', req.cookies);
 
-  // Cookies that have been signed
-  console.log('Signed Cookies: ', req.signedCookies);
-})
+//   // Cookies that have been signed
+//   console.log('Signed Cookies: ', req.signedCookies);
+// })
 
-app.listen(8080);
+// app.listen(8080);
