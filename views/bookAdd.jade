@@ -1,0 +1,17 @@
+extends layout 
+block content 
+  h1= title 
+  p Enter following details to add a book
+
+  form(role="form" name="bookForm" method="POST", action="/books/add")
+
+    div.bookName
+      label Book Name 
+      input(type="text", name="bookName")
+    div.bookID
+      label Book ID 
+      input(type="text", name="bookID")
+    div.bookAuthor
+      label Author Name 
+      input(type="text", name="authorName")
+    input(type="submit" name="Submit button")

@@ -42,6 +42,12 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+app.post("/send", function(req, res){
+  var newID = req.body.ID;
+  res.redirect("/action")
+});
+
 module.exports = app;
 
 
