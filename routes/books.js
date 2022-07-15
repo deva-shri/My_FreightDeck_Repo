@@ -20,9 +20,20 @@ router.post('/add', function (req, res, next) {
 	var name = req.body.bookName;
 	var id = req.body.bookID;
 	var author = req.body.authorName;
+
   console.log(name + " " + id + " " + author);
 	res.status(200).json({ message:  "Book Saved Successfully" });
 });
+
+router.get('/add/:id', function(req, res, next) {
+  const {id} = req.params;
+  console.log("This is id: "+id);
+  console.log("1. "+id.bookName);
+  console.log("2. "+id.bookID);
+  console.log("3. "+id.authorName);
+
+	res.status(200).json({ message:  "Book Saved Successfully" });
+})
 
 //***** Case 1 *****/
 // router.post('/add', function (req, res, next) {

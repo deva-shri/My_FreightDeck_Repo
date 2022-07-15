@@ -3,7 +3,7 @@ block content
   h1= title 
   p Enter following details to add a book
 
-  form(role="form" name="bookForm" method="POST", action="/books/add")
+  form(role="form" name="bookForm" method="GET", action="/books/add/")
 
     div.bookName
       label Book Name 
